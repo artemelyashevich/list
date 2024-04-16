@@ -24,7 +24,7 @@ export const renderPosts = (data) => {
     body.innerHTML = ''
     data.forEach(post => {
         const tr = document.createElement("tr")
-        const styles = ["bg-white", "border-b", "dark:bg-gray-800", "dark:border-gray-700"]
+        const styles = ["bg-white", "border-b", "border-gray-400", "dark:bg-gray-800", "dark:border-gray-700"]
         tr.classList.add(...styles)
         getHeaders(data).forEach(header => {
             tr.innerHTML += `

@@ -5,12 +5,12 @@ export class Api {
         this.#BASE_URL = BASE_URL
     }
 
-    getAllPosts = async (query, currentPage = 1, perPage = 15) => {
+    getAllPosts = async (query, currentPage = 1) => {
         let data
         try {
             const url = new URL('/posts', this.#BASE_URL)
             url.searchParams.set("_page", currentPage)
-            url.searchParams.set("_limit", perPage)
+            url.searchParams.set("_limit", 15)
             query && url.searchParams.set("title_like", query)
             const response = await fetch(url)
             if (response.ok) {
